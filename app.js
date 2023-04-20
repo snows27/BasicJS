@@ -1,18 +1,8 @@
-function getScore(){
-    let calScore = document.getElementById("score").value
-if(calScore >= 80){
-    document.getElementById("result").innerHTML = "<b>คุณได้เกรด A</b>"
+let qrt = parseInt(prompt("จำนวนสินค้า"));
+let sum = 0
+for(var i = 0; i < qrt; i++){
+    let itemprice = parseInt(prompt("ราคาสินค้าชิ้นที่: "+(i+1)));
+    document.getElementById("price-list").innerHTML += "รายการสินค้าชิ้นที่ "+(i+1)+" = "+itemprice+" บาท"+"</br>";
+    sum += itemprice
 }
-else if(calScore >= 60 && calScore < 80) {
-    document.getElementById("result").innerHTML = "<b>คุณได้เกรด B</b>"
-}
-else if(calScore >= 40 && calScore < 60) {
-    document.getElementById("result").innerHTML = "<b>คุณได้เกรด C</b>"
-}
-else if(calScore >= 20 && calScore < 40) {
-    document.getElementById("result").innerHTML = "<b>คุณได้เกรด D</b>"
-}
-else {
-    document.getElementById("result").innerHTML = "<b>คุณได้เกรด F</b>"
-}
-}
+document.getElementById("result").innerHTML = "ราคารวมทั้งสิ้น "+sum+" บาท"
