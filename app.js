@@ -1,8 +1,21 @@
-let qrt = parseInt(prompt("จำนวนสินค้า"));
-let sum = 0
-for(var i = 0; i < qrt; i++){
-    let itemprice = parseInt(prompt("ราคาสินค้าชิ้นที่: "+(i+1)));
-    document.getElementById("price-list").innerHTML += "รายการสินค้าชิ้นที่ "+(i+1)+" = "+itemprice+" บาท"+"</br>";
-    sum += itemprice
+let round = parseInt(prompt("How many rounds do you want to play?"));
+let arrAns = ["HEAD", "TAIL"]
+let score = 0;
+for(i = 0; i < round; i++){
+let answer = prompt("Guess it!! 'Head' or 'Tail'");
+let randIndex = Math.floor(Math.random()*arrAns.length);
+let randAns = arrAns[randIndex]
+   let answerUP = answer.toUpperCase();
+   console.log(answerUP);
+   console.log(arrAns);
+    if(answerUP == randAns){
+        score++;
+        document.getElementById("result").innerHTML += "round: "+(i+1) + " You won" +"<br />" + "Your answer is: "+answer + "<br />" + "The answer is: "+randAns+"<br />"+"<br />";
+        alert("Correct")
+    }
+    else {
+        document.getElementById("result").innerHTML += "round: "+(i+1) + " You lost"+ "<br />" + "Your answer is: "+answer + "<br />" + "The answer is: "+randAns+"<br />"+"<br />";
+        alert("Miss")
+    }
 }
-document.getElementById("result").innerHTML = "ราคารวมทั้งสิ้น "+sum+" บาท"
+document.getElementById("score").innerHTML = "Your score is: " + score
