@@ -6,15 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-    <h1>Fahrenheit to Celcius Conversion</h1>
-    <div id="Showform">
-        <label for="userInput">Celcius or Fahrenheit</label> = 
-        <input type="number" id="userInput" placeholder="insert number here" value="32">
-        <button type="submit" onclick="fahcelConversion()"> convert </button>
-        <p>Result of Fahrenheit = <span id="resultF"></span></p>
-        <p>Result of Celcius = <span id="resultC"></span></p>
-    </div>
+<body id="showdata">
+    <button onclick="displayData()">Show userdata</button>
+    <button onclick="displayTitle()">Show userTitle</button>
+    <button onclick="clearData()">Clears data</button>
+    
+  
     <script src="app.js"></script>
 </body>
 
