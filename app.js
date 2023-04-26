@@ -1,5 +1,6 @@
 const divuser = document.createElement("div");
 const divalbum = document.createElement("div");
+const divImage = document.createElement("div");
 const Body = document.getElementById("showdata");
 fetch('https://jsonplaceholder.typicode.com/users')
 .then(res => res.json())
@@ -20,9 +21,13 @@ function displayData(){
 function displayTitle(){
    Body.appendChild(divalbum)
 }
+function displayImage(){
+    Body.appendChild(divImage)
+}
 function clearData(){
     divuser.remove()
     divalbum.remove()
+    divImage.remove()
 }
 
 
@@ -34,5 +39,21 @@ fetch('https://jsonplaceholder.typicode.com/albums')
         p.innerText = `${y.userId}: ${y.title}`
         divalbum.append(p)
         console.log(y);
+    })
+})
+
+
+fetch('https://jsonplaceholder.typicode.com/photos')
+.then(res => res.json())
+.then(photos => {
+    photos.map((x) => {
+        console.log(x)
+        const p = document.createElement("p")
+        const img = document.createElement("img")
+        img.src = x.thumbnailUrl  
+        p.innerText = `${x.id}: ${x.title}`
+        divImage.append(p)
+        divImage.append(img)
+
     })
 })
