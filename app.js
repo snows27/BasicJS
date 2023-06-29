@@ -7,6 +7,13 @@ function anaGramWords(){
     //split both words to the characters
     let checkFV = [...firstVocab]
     let checkSV = [...secondVocab]
+    //check length of 2 words If it not the same it can't be anagram
+    if (checkFV.length !== checkSV.length){
+        console.log("NOT Anagram");
+        return;
+    }
+    //but.. if it the same it will continue to check each characters are the same?
+
     const charCountFV = {}; // the object declare to store key and value {key: value}.
     const charCountSV = {}; // the object declare to store key and value {key: value}.
     //the loop will check by the key which is the character.
@@ -24,5 +31,6 @@ function anaGramWords(){
     }
 }
         console.log("IS Anagram");
+    
 }
 anaGramWords();
