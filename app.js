@@ -10,7 +10,7 @@ function anaGramWords(){
     //check length of 2 words If it not the same it can't be anagram
     if (checkFV.length !== checkSV.length){
         console.log("NOT Anagram");
-        return;
+        return false;
     }
     //but.. if it the same it will continue to check each characters are the same?
 
@@ -27,10 +27,10 @@ function anaGramWords(){
     for (let char in charCountFV){
     if (charCountFV[char] !== charCountSV[char]){
         console.log("NOT Anagram");
-        return;
+        return false;
     }
 }
-        console.log("IS Anagram");
-    
+console.log("IS Anagram");
+return true;
 }
-anaGramWords();
+console.log(anaGramWords(firstVocab, secondVocab));
